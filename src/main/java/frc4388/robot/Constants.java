@@ -132,6 +132,12 @@ public final class Constants {
     public static final class DriveConstants {
         public static final int SMARTDASHBOARD_UPDATE_FRAME = 2;
     }
+
+    public static final class ShooterConstants {
+        public static final double SHOOTER_SPEED = .5;
+        public static final int LEFT_SHOOTER_ID = 15;
+        public static final int RIGHT_SHOOTER_ID = 16;
+    }
     
     public static final class LEDConstants {
         public static final int LED_SPARK_ID = 0;
