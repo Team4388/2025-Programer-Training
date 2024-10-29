@@ -225,16 +225,6 @@ public class  SwerveDrive extends SubsystemBase {
     gyro.resetFlip();
     rotTarget = gyro.getAngle();
   }
-
-  public void resetGyroRightBlue() {
-    gyro.resetRightSideBlue();
-    rotTarget = gyro.getAngle();
-  }
-
-  public void resetGyroRightAmp() {
-    gyro.resetAmpSide();
-    rotTarget = gyro.getAngle();
-  }
   
   public void stopModules() {
     for (SwerveModule module : this.modules) {
