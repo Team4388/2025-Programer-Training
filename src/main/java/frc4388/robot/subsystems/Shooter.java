@@ -26,8 +26,8 @@ public class Shooter extends SubsystemBase
 
   public void spin(double speed)
   {
-    leftShooter.set(speed);
-    rightShooter.set(speed);
+    leftShooter.set(-speed);
+    rightShooter.set(-speed);
   }
 
   public void spin()
