@@ -30,6 +30,7 @@ import frc4388.robot.commands.Swerve.neoJoystickRecorder;
 // Subsystems
 // import frc4388.robot.subsystems.LED;
 import frc4388.robot.subsystems.SwerveDrive;
+import frc4388.robot.subsystems.Shooter;
 
 // Utilites
 import frc4388.utility.DeferredBlock;
@@ -55,7 +56,7 @@ public class RobotContainer {
                                                                   m_robotMap.rightBack,
                                               
                                                                   m_robotMap.gyro);
-
+    private final Shooter m_robotShooter = new Shooter(m_robotMap.leftShooter, m_robotMap.rightShooter);
     /* Controllers */
     private final DeadbandedXboxController m_driverXbox   = new DeadbandedXboxController(OIConstants.XBOX_DRIVER_ID);
     private final DeadbandedXboxController m_operatorXbox = new DeadbandedXboxController(OIConstants.XBOX_OPERATOR_ID);    
@@ -151,7 +152,9 @@ public class RobotContainer {
             .onTrue(new InstantCommand(() -> m_robotSwerveDrive.shiftUpRot()));
           
         // ?  /* Operator Buttons */
-            
+        DualJoystickButton(getDeadbandedOperatorController(), getVirtualOperatorController(), XboxController.LEFT_BUMPER_BUTTON)
+            .onTrue(new InstantCommand(() -> m_robotShooter.spin(), m_robotShooter))
+            .onFalse(new InstantCommand(() -> m_robotShooter.stop(), m_robotShooter));
         // ? /* Programer Buttons (Controller 3)*/
 
         // * /* Auto Recording */
