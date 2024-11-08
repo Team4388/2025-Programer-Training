@@ -26,7 +26,7 @@ import edu.wpi.first.wpilibj2.command.RunCommand;
 import frc4388.utility.controller.VirtualController;
 import frc4388.robot.commands.Swerve.neoJoystickPlayback;
 import frc4388.robot.commands.Swerve.neoJoystickRecorder;
-
+import frc4388.robot.subsystems.Shooter;
 // Subsystems
 // import frc4388.robot.subsystems.LED;
 import frc4388.robot.subsystems.SwerveDrive;
@@ -55,6 +55,8 @@ public class RobotContainer {
                                                                   m_robotMap.rightBack,
                                               
                                                                   m_robotMap.gyro);
+
+    private final Shooter m_robotshooter = new Shooter(m_robotMap.leftShooter, m_robotMap.rightShooter);
 
     /* Controllers */
     private final DeadbandedXboxController m_driverXbox   = new DeadbandedXboxController(OIConstants.XBOX_DRIVER_ID);

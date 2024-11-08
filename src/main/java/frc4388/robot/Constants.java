@@ -146,4 +146,9 @@ public final class Constants {
         public static final double LEFT_AXIS_DEADBAND = 0.1;
 
     }
+    public static final class ShooterConstants {
+        public static final int LEFT_SHOOTER_ID = 15;
+        public static final int RIGHT_SHOOTER_ID = 16;
+        public static final double SHOOTER_SPEED = 0.50;
+    }
 }
