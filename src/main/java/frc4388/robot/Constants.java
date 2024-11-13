@@ -34,17 +34,17 @@ public final class Constants {
         public static final double CORRECTION_MIN = 10;
         public static final double CORRECTION_MAX = 50;
         
-        public static final double[] GEARS = {0.25, 0.5, 1.0};
+        public static final double[] GEARS = {0.05, 0.25, 0.5, 1.0};
 
         public static final double SLOW_SPEED = 0.25;
         public static final double FAST_SPEED = 0.5;
         public static final double TURBO_SPEED = 1.0;
     
         public static final class DefaultSwerveRotOffsets {
-          public static final double FRONT_LEFT_ROT_OFFSET  = 0.0; //TODO: per robot swerve module offsets.
-          public static final double FRONT_RIGHT_ROT_OFFSET = 0.0; //TODO: per robot swerve module offsets.
-          public static final double BACK_LEFT_ROT_OFFSET   = 0.0; //TODO: per robot swerve module offsets.
-          public static final double BACK_RIGHT_ROT_OFFSET  = 0.0; //TODO: per robot swerve module offsets.
+          public static final double FRONT_LEFT_ROT_OFFSET  = -0.362548828125 - 0.25; //TODO: per robot swerve module offsets.
+          public static final double FRONT_RIGHT_ROT_OFFSET = -0.138916015625 - 0.25; //TODO: per robot swerve module offsets.
+          public static final double BACK_LEFT_ROT_OFFSET   = 0.024169921875 - 0.25; //TODO: per robot swerve module offsets.
+          public static final double BACK_RIGHT_ROT_OFFSET  = -0.1435546875 - 0.25; //TODO: per robot swerve module offsets.
         }
 
         public static final class IDs {
