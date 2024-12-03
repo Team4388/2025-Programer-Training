@@ -41,10 +41,10 @@ public final class Constants {
         public static final double TURBO_SPEED = 1.0;
     
         public static final class DefaultSwerveRotOffsets {
-          public static final double FRONT_LEFT_ROT_OFFSET  = 0.0; //TODO: per robot swerve module offsets.
-          public static final double FRONT_RIGHT_ROT_OFFSET = 0.0; //TODO: per robot swerve module offsets.
-          public static final double BACK_LEFT_ROT_OFFSET   = 0.0; //TODO: per robot swerve module offsets.
-          public static final double BACK_RIGHT_ROT_OFFSET  = 0.0; //TODO: per robot swerve module offsets.
+          public static final double FRONT_LEFT_ROT_OFFSET  =  0.36962890625  + 0.5; //TODO: per robot swerve module offsets.
+          public static final double FRONT_RIGHT_ROT_OFFSET =  0.61474609375  + 0.5; //TODO: per robot swerve module offsets.
+          public static final double BACK_LEFT_ROT_OFFSET   = -0.227294921875 + 0.5; //TODO: per robot swerve module offsets.
+          public static final double BACK_RIGHT_ROT_OFFSET  =  0.60595703125  + 0.5; //TODO: per robot swerve module offsets.
         }
 
         public static final class IDs {
