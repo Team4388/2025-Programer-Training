@@ -56,7 +56,7 @@ public class RobotContainer {
                                               
                                                                   m_robotMap.gyro);
 
-    private final Shooter m_robotshooter = new Shooter(m_robotMap.leftShooter, m_robotMap.rightShooter);
+    private final Shooter m_robotShooter = new Shooter(m_robotMap.leftShooter, m_robotMap.rightShooter);
 
     /* Controllers */
     private final DeadbandedXboxController m_driverXbox   = new DeadbandedXboxController(OIConstants.XBOX_DRIVER_ID);
@@ -153,7 +153,11 @@ public class RobotContainer {
             .onTrue(new InstantCommand(() -> m_robotSwerveDrive.shiftUpRot()));
           
         // ?  /* Operator Buttons */
-            
+        
+        DualJoystickButton(getDeadbandedOperatorController(), getVirtualOperatorController(), XboxController.LEFT_BUMPER_BUTTON)
+            .onTrue(new InstantCommand(() -> m_robotShooter.spin()))
+            .onFalse(new InstantCommand(() -> m_robotShooter.stop()));
+
         // ? /* Programer Buttons (Controller 3)*/
 
         // * /* Auto Recording */

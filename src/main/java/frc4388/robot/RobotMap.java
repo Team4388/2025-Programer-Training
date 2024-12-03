@@ -11,6 +11,7 @@ import com.ctre.phoenix6.hardware.TalonFX;
 import com.ctre.phoenix6.hardware.CANcoder;
 import com.ctre.phoenix6.hardware.Pigeon2;
 
+import frc4388.robot.Constants.ShooterConstants;
 // import edu.wpi.first.wpilibj.motorcontrol.Spark;
 // import frc4388.robot.Constants.LEDConstants;
 import frc4388.robot.Constants.SwerveDriveConstants;
@@ -54,6 +55,10 @@ public class RobotMap {
     public final TalonFX rightBackWheel = new TalonFX(SwerveDriveConstants.IDs.RIGHT_BACK_WHEEL_ID);
     public final TalonFX rightBackSteer = new TalonFX(SwerveDriveConstants.IDs.RIGHT_BACK_STEER_ID);
     public final CANcoder rightBackEncoder = new CANcoder(SwerveDriveConstants.IDs.RIGHT_BACK_ENCODER_ID);
+
+    /* Shooter Subsystem */
+    public final TalonFX leftShooter = new TalonFX(ShooterConstants.LEFT_SHOOTER_ID);
+    public final TalonFX rightShooter = new TalonFX(ShooterConstants.RIGHT_SHOOTER_ID);
 
     void configureDriveMotorControllers() {
         // initialize SwerveModules
