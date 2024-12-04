@@ -133,6 +133,15 @@ public final class Constants {
         public static final int SMARTDASHBOARD_UPDATE_FRAME = 2;
     }
 
+    public static final class IntakeConstants {
+        public static final int PIVOT_ID = 17;
+        public static final int INTAKE_ID = 18;
+        public static final double IN_POSITION = 0;
+        public static final double OUT_POSITION = 0;
+        public static final double INTAKE_SPEED = .75;
+        public static final double OUTTAKE_SPEED = 1.0;
+    }
+
     public static final class ShooterConstants {
         public static final double SHOOTER_SPEED = .5;
         public static final int LEFT_SHOOTER_ID = 15;
