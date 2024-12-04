@@ -12,6 +12,7 @@ import com.ctre.phoenix6.hardware.CANcoder;
 import com.ctre.phoenix6.hardware.Pigeon2;
 
 import frc4388.robot.Constants.IntakeConstants;
+import frc4388.robot.Constants.ShooterConstants;
 // import edu.wpi.first.wpilibj.motorcontrol.Spark;
 // import frc4388.robot.Constants.LEDConstants;
 import frc4388.robot.Constants.SwerveDriveConstants;
@@ -58,6 +59,11 @@ public class RobotMap {
 
     public final TalonFX pivotArm = new TalonFX(IntakeConstants.IDs.PIVOTMOTOR_ID);
     public final TalonFX intakeWheel = new TalonFX(IntakeConstants.IDs.INTAKEMOTOR_ID);
+
+    /* Shooter Subsystem */
+    public final TalonFX leftShooter = new TalonFX(ShooterConstants.LEFT_SHOOTER_ID);
+    public final TalonFX rightShooter = new TalonFX(ShooterConstants.RIGHT_SHOOTER_ID);
+
 
     void configureDriveMotorControllers() {
         // initialize SwerveModules

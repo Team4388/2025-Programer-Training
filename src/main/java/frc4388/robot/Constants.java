@@ -34,7 +34,7 @@ public final class Constants {
         public static final double CORRECTION_MIN = 10;
         public static final double CORRECTION_MAX = 50;
         
-        public static final double[] GEARS = {0.25, 0.5, 1.0};
+        public static final double[] GEARS = {0.05, 0.25, 0.5, 1.0};
 
         public static final double SLOW_SPEED = 0.25;
         public static final double FAST_SPEED = 0.5;
@@ -146,7 +146,6 @@ public final class Constants {
         public static final double LEFT_AXIS_DEADBAND = 0.1;
 
     }
-
     public static final class IntakeConstants {
         public static final class IDs{
             public static final int PIVOTMOTOR_ID = 17;
@@ -157,5 +156,11 @@ public final class Constants {
         public static final double OUT_POSITION =0.0;
         public static final double INTAKE_SPEED= 0.0;
         public static final double OUTTAKE_SPEED= 0.0;
+    }
+    public static final class ShooterConstants
+    {
+        public static final int LEFT_SHOOTER_ID = 15;
+        public static final int RIGHT_SHOOTER_ID = 16;
+        public static final double SHOOTER_SPEED = 0.50;
     }
 }

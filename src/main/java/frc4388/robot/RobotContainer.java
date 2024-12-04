@@ -28,6 +28,8 @@ import frc4388.robot.commands.Swerve.neoJoystickPlayback;
 import frc4388.robot.commands.Swerve.neoJoystickRecorder;
 import frc4388.robot.subsystems.Intake;
 // Subsystems
+import frc4388.robot.subsystems.Shooter;
+
 // import frc4388.robot.subsystems.LED;
 import frc4388.robot.subsystems.SwerveDrive;
 
@@ -47,6 +49,7 @@ public class RobotContainer {
     public final RobotMap m_robotMap = new RobotMap();
     
     /* Subsystems */
+    public final Shooter m_robotShooter = new Shooter(m_robotMap.leftShooter, m_robotMap.rightShooter);
     // private final LED m_robotLED = new LED();
     public final Intake m_robotIntake= new Intake(m_robotMap.pivotArm, m_robotMap.intakeWheel);
     public final SwerveDrive m_robotSwerveDrive = new SwerveDrive(m_robotMap.leftFront,
@@ -152,7 +155,7 @@ public class RobotContainer {
             .onTrue(new InstantCommand(() -> m_robotSwerveDrive.shiftUpRot()));
           
         // ?  /* Operator Buttons */
-        
+
         /*Intake */
         DualJoystickButton(getDeadbandedDriverController(), getVirtualOperatorController(), XboxController.RIGHT_BUMPER_BUTTON)
         .onTrue(new SequentialCommandGroup(
@@ -167,6 +170,13 @@ public class RobotContainer {
         DualJoystickButton(getDeadbandedOperatorController(), getVirtualOperatorController(),  XboxController.A_BUTTON)
         .onTrue(new InstantCommand(()->m_robotIntake.handoff()))
         .onFalse(new InstantCommand(()-> m_robotIntake.stopIntakeMotor()));
+
+        /*Shooter*/
+
+        new JoystickButton(getDeadbandedOperatorController(), XboxController.LEFT_BUMPER_BUTTON)
+            .onTrue(new InstantCommand(() -> m_robotShooter.spin()))
+            .onFalse(new InstantCommand(() -> m_robotShooter.stop()));
+            
         // ? /* Programer Buttons (Controller 3)*/
 
         // * /* Auto Recording */
