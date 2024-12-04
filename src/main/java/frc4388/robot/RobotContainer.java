@@ -21,12 +21,12 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.RunCommand;
-
+import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 // Autos
 import frc4388.utility.controller.VirtualController;
 import frc4388.robot.commands.Swerve.neoJoystickPlayback;
 import frc4388.robot.commands.Swerve.neoJoystickRecorder;
-
+import frc4388.robot.subsystems.Intake;
 // Subsystems
 import frc4388.robot.subsystems.Shooter;
 
@@ -51,7 +51,7 @@ public class RobotContainer {
     /* Subsystems */
     public final Shooter m_robotShooter = new Shooter(m_robotMap.leftShooter, m_robotMap.rightShooter);
     // private final LED m_robotLED = new LED();
-
+    public final Intake m_robotIntake= new Intake(m_robotMap.pivotArm, m_robotMap.intakeWheel);
     public final SwerveDrive m_robotSwerveDrive = new SwerveDrive(m_robotMap.leftFront,
                                                                   m_robotMap.rightFront,
                                                                   m_robotMap.leftBack,
@@ -59,7 +59,8 @@ public class RobotContainer {
                                               
                                                                   m_robotMap.gyro);
 
-    /* Controllers */
+    
+                                                                  /* Controllers */
     private final DeadbandedXboxController m_driverXbox   = new DeadbandedXboxController(OIConstants.XBOX_DRIVER_ID);
     private final DeadbandedXboxController m_operatorXbox = new DeadbandedXboxController(OIConstants.XBOX_OPERATOR_ID);    
     private final DeadbandedXboxController m_autoRecorderXbox = new DeadbandedXboxController(OIConstants.XBOX_PROGRAMMER_ID);
@@ -154,6 +155,21 @@ public class RobotContainer {
             .onTrue(new InstantCommand(() -> m_robotSwerveDrive.shiftUpRot()));
           
         // ?  /* Operator Buttons */
+
+        /*Intake */
+        DualJoystickButton(getDeadbandedDriverController(), getVirtualOperatorController(), XboxController.RIGHT_BUMPER_BUTTON)
+        .onTrue(new SequentialCommandGroup(
+            new InstantCommand(() -> m_robotIntake.PIDOut()),
+            new InstantCommand(() -> m_robotIntake.spinIntakeMotor())
+        ))
+        .onFalse(new InstantCommand(() -> m_robotIntake.stopIntakeMotor()));
+
+        DualJoystickButton(getDeadbandedOperatorController(), getVirtualOperatorController(), XboxController.B_BUTTON)
+        .onTrue(new InstantCommand(() -> m_robotIntake.PIDIn()));
+
+        DualJoystickButton(getDeadbandedOperatorController(), getVirtualOperatorController(),  XboxController.A_BUTTON)
+        .onTrue(new InstantCommand(()->m_robotIntake.handoff()))
+        .onFalse(new InstantCommand(()-> m_robotIntake.stopIntakeMotor()));
 
         /*Shooter*/
 

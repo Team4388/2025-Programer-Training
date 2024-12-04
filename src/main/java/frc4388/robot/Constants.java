@@ -41,10 +41,10 @@ public final class Constants {
         public static final double TURBO_SPEED = 1.0;
     
         public static final class DefaultSwerveRotOffsets {
-          public static final double FRONT_LEFT_ROT_OFFSET  = -0.362548828125 - 0.25; //TODO: per robot swerve module offsets.
-          public static final double FRONT_RIGHT_ROT_OFFSET = -0.138916015625 - 0.25; //TODO: per robot swerve module offsets.
-          public static final double BACK_LEFT_ROT_OFFSET   = 0.024169921875 - 0.25; //TODO: per robot swerve module offsets.
-          public static final double BACK_RIGHT_ROT_OFFSET  = -0.1435546875 - 0.25; //TODO: per robot swerve module offsets.
+          public static final double FRONT_LEFT_ROT_OFFSET  = -0.363525390625 - 0.25; //TODO: per robot swerve module offsets.
+          public static final double FRONT_RIGHT_ROT_OFFSET = 0.365966796875 + 0.25; //TODO: per robot swerve module offsets.
+          public static final double BACK_LEFT_ROT_OFFSET   = 0.02392578125 - 0.25; //TODO: per robot swerve module offsets.
+          public static final double BACK_RIGHT_ROT_OFFSET  = 0.35498046875 + 0.25; //TODO: per robot swerve module offsets.
         }
 
         public static final class IDs {
@@ -146,7 +146,17 @@ public final class Constants {
         public static final double LEFT_AXIS_DEADBAND = 0.1;
 
     }
+    public static final class IntakeConstants {
+        public static final class IDs{
+            public static final int PIVOTMOTOR_ID = 17;
+            public static final int INTAKEMOTOR_ID = 18;
+        }
 
+        public static final double IN_POSITION =0.0;
+        public static final double OUT_POSITION =0.0;
+        public static final double INTAKE_SPEED= 0.0;
+        public static final double OUTTAKE_SPEED= 0.0;
+    }
     public static final class ShooterConstants
     {
         public static final int LEFT_SHOOTER_ID = 15;
