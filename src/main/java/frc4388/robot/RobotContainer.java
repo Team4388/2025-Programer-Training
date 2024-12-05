@@ -157,7 +157,7 @@ public class RobotContainer {
         // ?  /* Operator Buttons */
 
         /*Intake */
-        DualJoystickButton(getDeadbandedDriverController(), getVirtualOperatorController(), XboxController.RIGHT_BUMPER_BUTTON)
+        DualJoystickButton(getDeadbandedOperatorController(), getVirtualOperatorController(), XboxController.RIGHT_BUMPER_BUTTON)
         .onTrue(new SequentialCommandGroup(
             new InstantCommand(() -> m_robotIntake.PIDOut()),
             new InstantCommand(() -> m_robotIntake.spinIntakeMotor())

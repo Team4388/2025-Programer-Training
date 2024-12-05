@@ -20,9 +20,9 @@ public class Intake extends SubsystemBase{
         intakeMotor.setNeutralMode(NeutralModeValue.Brake);
 
         var PIDConfigs = new Slot0Configs();
-        PIDConfigs.kP = 0;
+        PIDConfigs.kP = 1;
         PIDConfigs.kI = 0;
-        PIDConfigs.kD = 0;
+        PIDConfigs.kD = 0.25;
         pivotMotor.getConfigurator().apply(PIDConfigs);
 
     }

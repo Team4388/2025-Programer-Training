@@ -153,9 +153,9 @@ public final class Constants {
         }
 
         public static final double IN_POSITION =0.0;
-        public static final double OUT_POSITION =0.0;
-        public static final double INTAKE_SPEED= 0.0;
-        public static final double OUTTAKE_SPEED= 0.0;
+        public static final double OUT_POSITION =-50;
+        public static final double INTAKE_SPEED= 0.75;
+        public static final double OUTTAKE_SPEED= -1.0;
     }
     public static final class ShooterConstants
     {
