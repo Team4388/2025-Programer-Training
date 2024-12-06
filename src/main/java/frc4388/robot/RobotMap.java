@@ -16,6 +16,7 @@ import frc4388.robot.Constants.ShooterConstants;
 // import edu.wpi.first.wpilibj.motorcontrol.Spark;
 // import frc4388.robot.Constants.LEDConstants;
 import frc4388.robot.Constants.SwerveDriveConstants;
+import frc4388.robot.Constants.climberConstants;
 import frc4388.robot.subsystems.SwerveModule;
 import frc4388.utility.RobotGyro;
 
@@ -56,9 +57,12 @@ public class RobotMap {
     public final TalonFX rightBackWheel = new TalonFX(SwerveDriveConstants.IDs.RIGHT_BACK_WHEEL_ID);
     public final TalonFX rightBackSteer = new TalonFX(SwerveDriveConstants.IDs.RIGHT_BACK_STEER_ID);
     public final CANcoder rightBackEncoder = new CANcoder(SwerveDriveConstants.IDs.RIGHT_BACK_ENCODER_ID);
-
+    /*Intake subsystem */
     public final TalonFX pivotArm = new TalonFX(IntakeConstants.IDs.PIVOTMOTOR_ID);
     public final TalonFX intakeWheel = new TalonFX(IntakeConstants.IDs.INTAKEMOTOR_ID);
+
+    /*climber subsystem */
+    public final TalonFX climber = new TalonFX(climberConstants.CLIMBERMOTOR_ID);
 
     /* Shooter Subsystem */
     public final TalonFX leftShooter = new TalonFX(ShooterConstants.LEFT_SHOOTER_ID);

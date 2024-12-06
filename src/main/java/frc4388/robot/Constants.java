@@ -163,4 +163,10 @@ public final class Constants {
         public static final int RIGHT_SHOOTER_ID = 16;
         public static final double SHOOTER_SPEED = 0.50;
     }
+
+    public static final class climberConstants {
+        public static final int CLIMBERMOTOR_ID = 19;
+        public static final double CLIMBINSPEED = -1;
+        public static final double CLIMBOUTSPEED = 0.87;
+    }
 }

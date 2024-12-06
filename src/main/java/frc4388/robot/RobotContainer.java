@@ -26,6 +26,7 @@ import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import frc4388.utility.controller.VirtualController;
 import frc4388.robot.commands.Swerve.neoJoystickPlayback;
 import frc4388.robot.commands.Swerve.neoJoystickRecorder;
+import frc4388.robot.subsystems.Climber;
 import frc4388.robot.subsystems.Intake;
 // Subsystems
 import frc4388.robot.subsystems.Shooter;
@@ -49,6 +50,8 @@ public class RobotContainer {
     public final RobotMap m_robotMap = new RobotMap();
     
     /* Subsystems */
+    public final Climber m_climber= new Climber(m_robotMap.climber);
+    
     public final Shooter m_robotShooter = new Shooter(m_robotMap.leftShooter, m_robotMap.rightShooter);
     // private final LED m_robotLED = new LED();
     public final Intake m_robotIntake= new Intake(m_robotMap.pivotArm, m_robotMap.intakeWheel);
@@ -192,6 +195,9 @@ public class RobotContainer {
             new VirtualController[]{getVirtualDriverController(), getVirtualOperatorController()},
             true, false))
             .onFalse(new InstantCommand());
+        
+        /* Climber */
+        new Trigger(())
     }
     
     /**
