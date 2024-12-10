@@ -197,7 +197,13 @@ public class RobotContainer {
             .onFalse(new InstantCommand());
         
         /* Climber */
-        new Trigger(())
+        new Trigger(() -> getDeadbandedOperatorController().getRightTriggerAxis() > 0.5)
+        .onTrue(new InstantCommand(() -> m_climber.climberDown()))
+        .onFalse(new InstantCommand(() -> m_climber.climberStop()));
+
+        new Trigger(() -> getDeadbandedOperatorController().getLeftTriggerAxis() > 0.5)
+        .onTrue(new InstantCommand(() -> m_climber.climberUp()))
+        .onFalse(new InstantCommand(() -> m_climber.climberStop()));
     }
     
     /**
