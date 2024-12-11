@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.wpilibj.GenericHID;
 import frc4388.utility.controller.XboxController;
+import frc4388.utility.controller.DeadbandedWhateverController;
 import frc4388.utility.controller.DeadbandedXboxController;
 import frc4388.robot.Constants.OIConstants;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
@@ -59,7 +60,7 @@ public class RobotContainer {
     public final Shooter m_robotShooter = new Shooter(m_robotMap.leftShooter, m_robotMap.rightShooter);
 
     /* Controllers */
-    private final DeadbandedXboxController m_driverXbox   = new DeadbandedXboxController(OIConstants.XBOX_DRIVER_ID);
+    private final DeadbandedXboxController m_driverXbox   = new DeadbandedWhateverController(OIConstants.XBOX_DRIVER_ID);
     private final DeadbandedXboxController m_operatorXbox = new DeadbandedXboxController(OIConstants.XBOX_OPERATOR_ID);    
     private final DeadbandedXboxController m_autoRecorderXbox = new DeadbandedXboxController(OIConstants.XBOX_PROGRAMMER_ID);
 
